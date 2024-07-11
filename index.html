@@ -1,0 +1,1352 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+
+<style>
+     @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+     @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,500,300,700);
+html{
+      min-height: 100vh;
+        }
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transition: width 0.3s;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.body {
+  padding-top: 10px; /* Adjust based on the height of your navbar */
+}
+
+/* .navbar{
+  background-color: #a1edff;
+} */
+.nav-link:hover::after {
+  width: 100%;
+}
+/* css */
+/* button:not(:disabled) {
+    cursor: pointer;
+    border-radius: 8px;
+    border-spacing: 2px;
+    padding: 3px;
+    width: 110px;
+    background-color: #09577b;
+    color: white;
+    font-weight: bold;
+}
+.button-bet:hover{
+    letter-spacing: 1.5px;
+    background-color: #66023c;
+} */
+.nav-item{
+/* margin-right:60px; */
+font-weight: bold;
+font-size: 15px;
+margin-left: auto;
+}
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    color: white;
+}
+.navbar-custom {
+      transition: background-color 0.5s;
+      background-color: transparent; /* Initial color */
+    }
+    .navbar-scrolled     {
+      background-color: white !important; /* Change to your desired color */
+      color: black;
+     
+    }
+    .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link-scrolled{
+        color:black ;
+    }
+    /* .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    color: black;
+} */
+
+.name{
+font-size: 30px;
+}
+.custom-width{
+  width: 35%;
+}
+.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0; /* Remove the margin so it aligns perfectly */
+}
+
+.dropdown-item{
+  font-weight: bold;
+  font-size: 12px;
+}
+.ss{
+    color: #000 !important;
+}
+.lik{
+font-size: 30px;
+ font-weight: bold;
+}
+.image-container {
+          position: relative;
+          height: 45%; /* Full height */
+          width: 100%; /* Full width */
+          background-image: url('./BG-CONTACT.avif'); /* Replace with your image */
+          background-size: cover; /* Cover the entire container */
+          background-position: center; /* Center the image */
+          background-repeat: no-repeat; /* No repeat */
+        }
+        .text-overlay {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: white;
+          text-align: center;
+          background-color: rgba(0, 0, 0, 0.5); /* Optional: Adds a semi-transparent background */
+          padding: 10px;
+          border-radius: 5px;
+    
+        }
+        .contact-p{
+          margin-top: 10%;
+          left: 50%;
+          
+        
+ }
+ a{
+    color: white; 
+ }
+ .add{
+    margin-top: 10%;
+          left: 50%;
+          
+ }
+ .text-overlay{
+    background-image: linear-gradient(to right,#2c040c,#420612,black);
+ }
+ .tittle1{
+color: #66023c;
+ }
+ .custom-list{
+    color: black;
+    font-size: 18px;
+    font-weight: bold
+ }
+ .custom-height {
+    height: 10px;
+}
+body{
+    margin: 0;
+    color: #eee;
+    font-family: Poppins;
+    font-size: 12px;
+}
+
+/* slider section  */
+
+.slider{
+    height: 100vh;
+    margin-top: -50px;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+}
+.slider .list .item{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0 0 0 0;
+}
+.slider .list .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.slider .list .item .content{
+    position: absolute;
+    top: 30%;
+    width: 1140px;
+    max-width: 80%;
+    left: 42%;
+    transform: translateX(-50%);
+    padding-right: 30%;
+    box-sizing: border-box;
+    color: #fff;
+    text-shadow: 0 5px 10px #0004;
+}
+
+.slider .list .item .content .title
+{
+    font-size: 3em; 
+    line-height: 1.3em;
+    font-style: italic;
+}
+.slider .list .item .type{
+    color:   #e79a3f;
+    font-weight: bold;
+    font-size: 5em; 
+}
+.slider .list .item .button{
+    display: grid;
+    grid-template-columns: repeat(2, 130px);
+    grid-template-rows: 40px;
+    gap: 5px;
+    margin-top: 20px;
+}
+.slider .list .item .button button{
+    border: none;
+    background-color: #eee;
+    font-family: Poppins;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.4s;
+    letter-spacing: 2px;
+    border-radius: 12px;
+    color: black;
+}
+
+
+.slider .list .item .button button:hover{
+    /* letter-spacing: 3px; */
+    background-color:  #e79a3f;
+    color: #fff;
+
+}
+.slider .list .item .button button:nth-child(2){
+    background-color: transparent;
+    /* border: 1px solid #ffffff; */
+    /* color: #eee; */
+}
+
+
+
+
+
+/* Thumbnail Section  */
+.thumbnail{
+    position: absolute;
+    bottom: 50px;
+    left: 80%;
+    width: max-content;
+    z-index: 100;
+    display: flex;
+    gap: 20px;
+}
+
+.thumbnail .item{
+    width: 150px;
+    height: 220px;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.thumbnail .item img{
+    width: 0%;
+    height: 0%;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
+}
+
+
+/* nextPrevArrows Section  */
+.nextPrevArrows{
+    position: absolute;
+    top: 86%;
+    right: 48%; 
+    z-index: 100;
+    width: 770px;
+    max-width: 1000px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.arrow2{
+    position: absolute;
+    top: 89%;
+    right: 49%;
+    z-index: 100;
+    width: 770px;
+    max-width: 1000px;
+    display: flex;
+    gap: 10px;
+}
+.nextPrevArrows button{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #e79a3f;
+    border: none;
+    color: #fff;
+    font-family: monospace;
+    font-weight: bold;
+    transition: .5s;
+    cursor: pointer;
+}
+.nextPrevArrows button:hover{
+    background-color: #dd8818;
+    color: #000;
+}
+
+/* Animation Part */
+.slider .list .item:nth-child(1){
+    z-index: 1;
+}
+
+
+/* animation text in first item */
+.slider .list .item:nth-child(1) .content .title,
+.slider .list .item:nth-child(1) .content .type,
+.slider .list .item:nth-child(1) .content .button
+{
+    transform: translateY(50px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent .5s 1s linear 1 forwards;
+}
+@keyframes showContent{
+    to{
+        transform: translateY(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+.slider .list .item:nth-child(1) .content .title{
+    animation-delay: 0.4s !important;
+}
+.slider .list .item:nth-child(1) .content .type{
+    animation-delay: 0.6s !important;
+}
+.slider .list .item:nth-child(1) .content .button{
+    animation-delay: 1s !important;
+}
+/* .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+} */
+* {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+ul li {
+        margin: 0 0 24px;
+        list-style: none;
+      }
+      
+      .the-arrow {
+        width: 1px;
+        transition: all 0.2s;
+      }
+      .the-arrow.-left1 {
+        position: absolute;
+        top: 60%;
+        left: 0;
+      }
+      .the-arrow.-left1 > .shaft {
+        width: 0;
+        background-color: white;
+      }
+      .the-arrow.-left1 > .shaft:before, .the-arrow.-left1 > .shaft:after {
+        width: 0;
+        background-color:white;
+      }
+      .the-arrow.-left1 > .shaft:before {
+        transform: rotate(0);
+      }
+      .the-arrow.-left1 > .shaft:after {
+        transform: rotate(0);
+      }
+      .the-arrow.-right {
+        top: 2px;
+      }
+      .the-arrow.-right > .shaft {
+        width: 1px;
+        transition-delay: 0.2s;
+      }
+      .the-arrow.-right > .shaft:before, .the-arrow.-right > .shaft:after {
+        width: 9px;
+        transition-delay: 0.3s;
+        transition: all 0.5s;
+      }
+      .the-arrow.-right > .shaft:before {
+        transform: rotate(-40deg);
+      }
+      .the-arrow.-right > .shaft:after {
+        transform: rotate(40deg);
+      }
+      .the-arrow > .shaft {
+        background-color:white;
+        display: block;
+        height: 1px;
+        position: relative;
+        transition: all 0.2s;
+        transition-delay: 0;
+        will-change: transform;
+      }
+      .the-arrow > .shaft:before, .the-arrow > .shaft:after {
+        background-color: white;
+        content: "";
+        display: block;
+        height: 1px;
+        position: absolute;
+        top: 0;
+        left: 0.5;
+        transition: all 0.2s;
+        transition-delay: 0;
+      }
+      .the-arrow > .shaft:before {
+        transform-origin: top left;
+      }
+      .the-arrow > .shaft:after {
+        transform-origin: bottom left;
+      }
+      
+      .animated-arrow {
+        display: inline-block;
+        color: white;
+        font-size: 1.50em;
+        font-style:italic;
+        font-family: "Helvetica Neue LT W01_41488878";
+        text-decoration: none;
+        position: relative;
+        transition: all 0.2s;
+      }
+      .animated-arrow:hover {
+        color:white;
+      }
+      .animated-arrow:hover > .the-arrow.-left1> .shaft {
+        width: 64px;
+        transition-delay: 0.1s;
+        background-color:white;
+      }
+      .animated-arrow:hover > .the-arrow.-left1 > .shaft:before, .animated-arrow:hover > .the-arrow.-left1> .shaft:after {
+        width: 9px;
+        transition-delay: 0.1s;
+        background-color: white;
+      }
+      .animated-arrow:hover > .the-arrow.-left1 > .shaft:before {
+        transform: rotate(-40deg);
+      }
+      .animated-arrow:hover > .the-arrow.-left1 > .shaft:after {
+        transform: rotate(40deg);
+      }
+      .animated-arrow:hover > .main {
+        transform: translateX(17px);
+        transform: translateX(80px);
+      }
+      .animated-arrow:hover > .main > .the-arrow.-right > .shaft {
+        width: 0;
+        transform: translateX(200%);
+        transition-delay: 0;
+      }
+      .animated-arrow:hover > .main > .the-arrow.-right > .shaft:before, .animated-arrow:hover > .main > .the-arrow.-right > .shaft:after {
+        width: 0;
+        transition-delay: 0;
+        transition: all 0.1s;
+      }
+      .animated-arrow:hover > .main > .the-arrow.-right > .shaft:before {
+        transform: rotate(0);
+      }
+      .animated-arrow:hover > .main > .the-arrow.-right > .shaft:after {
+        transform: rotate(0);
+      }
+      .animated-arrow > .main {
+        display: flex;
+        align-items: center;
+        transition: all 0.2s;
+      }
+      .animated-arrow > .main > .text {
+        margin: 0 16px 0 0;
+        line-height: 1;
+      }
+      .animated-arrow > .main > .the-arrow {
+        position: relative;
+      }
+      .arrow-new {
+        width: 1px;
+        transition: all 0.2s;
+      }
+      .arrow-new.left-new {
+        position: absolute;
+        top: 60%;
+        left: 0;
+      }
+      .arrow-new.left-new > .shaft-new {
+        width: 0;
+        background-color: white;
+      }
+      .arrow-new.left-new > .shaft-new:before, .arrow-new.left-new > .shaft-new:after {
+        width: 0;
+        background-color: white;
+      }
+      .arrow-new.left-new > .shaft-new:before {
+        transform: rotate(0);
+      }
+      .arrow-new.left-new > .shaft-new:after {
+        transform: rotate(0);
+      }
+      .arrow-new.right-new {
+        top: 2px;
+      }
+      .arrow-new.right-new > .shaft-new {
+        width: 1px;
+        transition-delay: 0.2s;
+      }
+      .arrow-new.right-new > .shaft-new:before, .arrow-new.right-new > .shaft-new:after {
+        width: 8px;
+        transition-delay: 0.3s;
+        transition: all 0.5s;
+      }
+      .arrow-new.right-new > .shaft-new:before {
+        transform: rotate(40deg);
+      }
+      .arrow-new.right-new > .shaft-new:after {
+        transform: rotate(-40deg);
+      }
+      .arrow-new > .shaft-new {
+        background-color: white;
+        display: block;
+        height: 1px;
+        position: relative;
+        transition: all 0.2s;
+        transition-delay: 0;
+        will-change: transform;
+      }
+      .arrow-new > .shaft-new:before, .arrow-new > .shaft-new:after {
+        background-color: white;
+        content: "";
+        display: block;
+        height: 1px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transition: all 0.2s;
+        transition-delay: 0;
+      }
+      .arrow-new > .shaft-new:before {
+        transform-origin: top right;
+      }
+      .arrow-new > .shaft-new:after {
+        transform-origin: bottom right;
+      }
+      
+      .animated-arrow-new {
+        display: inline-block;
+        color: white;
+        font-size: 1.50em;
+        font-style: italic;
+        font-family: "Helvetica Neue LT W01_41488878";
+        text-decoration: none;
+        position: absolute;
+        transition: all 0.2s;
+        top: 6%;
+    width: 700px;
+    max-width: 1000px;
+    left: 242px;
+      }
+      .animated-arrow-new:hover {
+        color: white;
+      }
+      .animated-arrow-new:hover > .arrow-new.left-new > .shaft-new {
+        width: 64px;
+        transition-delay: 0.1s;
+        background-color: white;
+      }
+      .animated-arrow-new:hover > .arrow-new.left-new > .shaft-new:before, .animated-arrow-new:hover > .arrow-new.left-new > .shaft-new:after {
+        width: 8px;
+        transition-delay: 0.1s;
+        background-color: white;
+      }
+      .animated-arrow-new:hover > .arrow-new.left-new > .shaft-new:before {
+        transform: rotate(40deg);
+      }
+      .animated-arrow-new:hover > .arrow-new.left-new > .shaft-new:after {
+        transform: rotate(-40deg);
+      }
+      .animated-arrow-new:hover > .main-new {
+        transform: translateX(17px);
+        transform: translateX(80px);
+      }
+      .animated-arrow-new:hover > .main-new > .arrow-new.right-new > .shaft-new {
+        width: 0;
+        transform: translateX(200%);
+        transition-delay: 0;
+      }
+      .animated-arrow-new:hover > .main-new > .arrow-new.right-new > .shaft-new:before, .animated-arrow-new:hover > .main-new > .arrow-new.right-new > .shaft-new:after {
+        width: 0;
+        transition-delay: 0;
+        transition: all 0.1s;
+      }
+      .animated-arrow-new:hover > .main-new > .arrow-new.right-new > .shaft-new:before {
+        transform: rotate(0);
+      }
+      .animated-arrow-new:hover > .main-new > .arrow-new.right-new > .shaft-new:after {
+        transform: rotate(0);
+      }
+      .animated-arrow-new > .main-new {
+        display: flex;
+        align-items: center;
+        transition: all 0.2s;
+      }
+      .animated-arrow-new > .main-new > .text-new {
+        margin: 0 16px 0 0;
+        line-height: 1;
+      }
+      .animated-arrow-new > .main-new > .arrow-new {
+        position: relative;
+      }
+
+        /* tittle  starts*/
+
+    /* Gradient Background with Bold Text */
+    .title-container {
+            /* Example gradient colors */
+            padding: 20px;
+            border-radius: 300px;
+            text-align: center;
+            right: 10px;
+        }
+        .title-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            border-bottom: 2px solid linear-gradient(135deg,black,gray); ;
+        }
+
+        /* Iconography */
+        .title-icon {
+            display: inline-block;
+            margin: 0 5px;
+        }
+        .cloud-icon::before {
+            content: "\2601"; /* Unicode for cloud icon */
+        }
+        .devops-icon::before {
+            content: "\f013"; /* Example Font Awesome icon for gear */
+            font-family: "Font Awesome 5 Free";
+        }
+        .devsecops-icon::before {
+            content: "\f132"; /* Example Font Awesome icon for shield */
+            font-family: "Font Awesome 5 Free";
+        }
+
+        /* Horizontal Line Separators */
+        /* .separator {
+            margin: 10px 0;
+            border-bottom: 1px solid #ccc; 
+        } */
+
+        /* Typography Contrast */
+        .title-bold {
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+            font-family: Arial, sans-serif;
+        }
+        .title-italic {
+            font-size: 20px;
+            font-style: italic;
+            color: #666;
+            font-family: Georgia, serif;
+        }
+        .custom-line {
+            width: 70%;
+            height: 1px;
+            background-color: #333;
+            margin: 5px 0;
+            margin-left: 230px;
+
+        }
+    /* tittle ends */
+    .divide{
+        background: linear-gradient(135deg, #F89009, #feb47b,#fbbe46);
+        height: 800px;
+        border-radius: 55px;
+    }
+    .card-text{
+        font-size: 20px;
+    }
+ .card{
+     margin-left: 160px;
+ }
+ .card-container {
+        display: flex;
+        justify-content: space-between; /* Adjust this as needed */
+    }
+    .card1{
+        margin-right: 140px;
+        
+    }
+    .card4{
+        margin-right: 130px;
+    }
+    .img{
+        height: 400px;
+    }
+    .img1{
+        height:400px ;
+    }
+    .btn{
+        background-color: #E79A3F;
+        color: black;
+        border-radius: 12px;
+        font-weight: bold;
+    }
+    .btn:hover{
+        background: linear-gradient(45deg, #E79A3F,#808080);
+        color: white;
+    }
+    /* .button{
+        margin-bottom: 30px;
+    } */
+
+    .card-text{
+        font-weight: 40px;
+        font-style: italic;
+        font-size: 15px;
+    }
+    .card-body{
+        background: linear-gradient(135deg,black,gray);
+        height: 200px;
+    }
+   
+.para{
+    margin-top: -1px;
+}
+ /* Horizontal Line Separators */
+        .separator {
+            margin: 5px 0;
+            border-bottom: 30px solid #ccc; 
+        }
+
+
+
+/* Animation for next button click */
+.slider.next .list .item:nth-child(1) img{
+    width: 150px;
+    height: 220px;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    border-radius: 30px;
+    animation: showImage .5s linear 1 forwards;
+}
+
+@keyframes showImage{
+    to{
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+}
+
+.slider.next .thumbnail .item:nth-last-child(1){
+    overflow: hidden;
+    animation: showThumbnail .5s linear 1 forwards;
+}
+.slider.prev .list .item img{
+    z-index: 100;
+}
+
+
+@keyframes showThumbnail{
+    from{
+        width: 0;
+        opacity: 0;
+    }
+}
+
+
+.slider.next .thumbnail{
+    animation: effectNext .5s linear 1 forwards;
+}
+
+@keyframes effectNext{
+    from{
+        transform: translateX(150px);
+    }
+}
+
+
+
+/* Animation for prev button click */
+.slider.prev .list .item:nth-child(2){
+    z-index: 2;
+}
+
+.slider.prev .list .item:nth-child(2) img{
+    animation: outFrame 0.5s linear 1 forwards;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+@keyframes outFrame{
+    to{
+        width: 150px;
+        height: 220px;
+        bottom: 50px;
+        left: 50%;
+        border-radius: 20px;
+    }
+}
+
+.slider.prev .thumbnail .item:nth-child(1){
+    overflow: hidden;
+    opacity: 0;
+    animation: showThumbnail .5s linear 1 forwards;
+}
+.slider.next .nextPrevArrows button,
+.slider.prev .nextPrevArrows button{
+    pointer-events: none;
+}
+
+
+.slider.prev .list .item:nth-child(2) .content .title,
+.slider.prev .list .item:nth-child(2) .content .type,
+.slider.prev .list .item:nth-child(2) .content .button
+{
+    animation: contentOut 1.5s linear 1 forwards!important;
+}
+
+* {
+  font-family: Open Sans;
+}
+
+section {
+  width: 100%;
+  display: inline-block;
+  background: #333;
+  height: 50vh;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.footer-distributed{
+  background: #666;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  font: bold 16px sans-serif;
+  padding: 55px 50px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+  width: 40%;
+}
+
+/* The company logo */
+
+.footer-distributed h3{
+  color:  #ffffff;
+  font: normal 36px 'Open Sans', cursive;
+  margin: 0;
+}
+
+.footer-distributed h3 span{
+  color:  lightseagreen;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+  color:  #ffffff;
+  margin: 20px 0 12px;
+  padding: 0;
+}
+
+.footer-distributed .footer-links a{
+  display:inline-block;
+  line-height: 1.8;
+  font-weight:400;
+  text-decoration: none;
+  color:  inherit;
+}
+
+.footer-distributed .footer-company-name{
+  color:  #222;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center{
+  width: 35%;
+}
+
+.footer-distributed .footer-center i{
+  background-color:  #33383b;
+  color: #ffffff;
+  font-size: 25px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 42px;
+  margin: 10px 15px;
+  vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope{
+  font-size: 17px;
+  line-height: 38px;
+}
+
+.footer-distributed .footer-center p{
+  display: inline-block;
+  color: #ffffff;
+  font-weight:400;
+  vertical-align: middle;
+  margin:0;
+}
+
+.footer-distributed .footer-center p span{
+  display:block;
+  font-weight: normal;
+  font-size:14px;
+  line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+  color:  lightseagreen;
+  text-decoration: none;;
+}
+
+.footer-distributed .footer-links a:before {
+  content: "|";
+  font-weight:300;
+  font-size: 20px;
+  left: 0;
+  color: #fff;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.footer-distributed .footer-links .link-1:before {
+  content: none;
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+  width: 20%;
+}
+
+.footer-distributed .footer-company-about{
+  line-height: 20px;
+  color:  #92999f;
+  font-size: 13px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.footer-distributed .footer-company-about span{
+  display: block;
+  color:  #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons{
+  margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a{
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  background-color:  #33383b;
+  border-radius: 2px;
+
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 35px;
+
+  margin-right: 3px;
+  margin-bottom: 5px;
+}
+.footer-icons ul {
+            list-style-type: none; /* Remove default list bullets */
+            padding: 0; /* Remove default padding */
+            margin: 0; /* Remove default margin */
+            display: flex; /* Set flexbox to align items horizontally */
+            justify-content: center; /* Center the items horizontally (optional) */
+        }
+
+        .footer-icons li {
+            margin: 0 10px; /* Add horizontal space between items */
+        }
+.end-footer{
+    margin-right: 100px;
+}
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 880px) {
+
+  .footer-distributed{
+    font: bold 14px sans-serif;
+  }
+
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-center,
+  .footer-distributed .footer-right{
+    display: block;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .footer-distributed .footer-center i{
+    margin-left: 0;
+  }
+
+}
+@keyframes contentOut{
+    to{
+        transform: translateY(-150px);
+        filter: blur(20px);
+        opacity: 0;
+    }
+}
+@media screen and (max-width: 678px) {
+    .slider .list .item .content{
+        padding-right: 0;
+    }
+    .slider .list .item .content .title{
+        font-size: 50px;
+    }
+}
+.logo{
+    width:px;
+}
+</style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light  fixed-top">
+        <a class="nav-link navbar-brand" href="#">
+            <img src="./logo.png" alt="" width="110px" height="30px">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="hamburger-icon" >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link disable active menus" href="#" tabindex="-1">HOME <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown active ">
+                <a class="nav-link dropdown active cloud menus"  href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+                    CLOUD TECHNOLOGIES
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">OVERVIEW</a>
+                    <a class="dropdown-item" href="#">AWS ARCHITECT - ASSOCIATE</a>
+                    <a class="dropdown-item" href="#">AWS ARCHITECT - PROFESSIONAL</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active devops menus" href="#">DEVOPS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active service menus" href="#">SERVICES</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active about menus" href="#">ABOUT</a>
+            </li>
+                  <li class="nav-item ">
+                    <a class="nav-link active about menus" href="#">CONTACT</a>
+                  </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="slider">
+       <div class="list">
+
+            <div class="item">
+                <img src="./page1.jpg"  class="custom-height" alt="">
+
+                <div class="content">
+                    <div class="title">Become an</div>
+                    <div class="type">AWS PROFESSIONAL</div>
+                    <div class="title"> in a matter of days</div>
+                    <div class="button">
+                        <button>LEARN MORE</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="./slide2.jpeg" alt="">
+
+                <div class="content">
+                    <div class="type">GET EXPERTS</div>
+                    <div class="title">for your cloud and security implementation</div>
+                    
+                    <div class="button">
+                        <button>SEE MORE</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="./page3.avif" alt="">
+
+                <div class="content">
+                    <div class="title">Helping you </div>
+                    <div class="type">SOURCE THE RIGHT TALENT</div>
+                    <div class="title">for cloud, security, and networking</div>
+                    <div class="button">
+                        <button>SEE MORE</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="thumbnail">
+
+            <div class="item">
+                <img src="./clo2.webp" alt="">
+            </div>
+            <div class="item">
+                <img src="./slide].webp" alt="">
+            </div>
+            <div class="item">
+                <img src="./slider3.jpg" alt="">
+            </div>
+            
+        </div>
+
+
+        <div class="nextPrevArrows"> <div class='container  prev '>
+            <ul>
+              <li>
+                <a class='animated-arrow'>
+                  <span class='the-arrow -left1'>
+                    <span class='shaft'></span>
+                  </span>
+                  <span class='main'>
+                    <span class='text'>
+                      Previous
+                    </span>
+                    <span class='the-arrow -right'>
+                      <span class='shaft'></span>
+                    </span>
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+                 <div class='container-new next ' class="arrow2">
+                    <ul>
+                      <li>
+                        <a class='animated-arrow-new'>
+                          <span class='arrow-new left-new'>
+                            <span class='shaft-new'></span>
+                          </span>
+                          <span class='main-new'>
+                            <span class='text-new'>
+                              Next
+                            </span>
+                            <span class='arrow-new right-new'>
+                              <span class='shaft-new'></span>
+                            </span>
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+        </div>
+      </div>
+       <br>
+       <br>
+       <br>
+       
+    <div class="divide">
+        <div class="title-container">
+            <div class="title-text">Hxtron enables IT professionals to succeed with training on Cloud technologies, DevOps, and DevSecOps</div>
+            <div class="custom-line"></div> 
+            <br>
+        </div>
+        <br>
+           <br>
+    <div class="card-container">
+        
+        <div class="card" style="width: 40rem;">
+            <img src="./card1.jpeg" class="card-img-top img" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">AWS TRAINING - SOLUTION ARCHITECT ASSOCIATE</h5>
+              <p class="card-text">Seasoned Trainers, class room and hands-on training to help you complete the program in just 5 days!</p>
+              <a href="#" class="btn btn">Go somewhere</a>
+            </div>
+          </div>
+          <div class="card4" style="width: 40rem;">
+            <img src="./card3.jpeg" class="card-img-top img1" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">AWS TRAINING - SOLUTION ARCHITECT PROFESSIONAL</h5>
+              <p class="card-text">An extensive 4 day program for experienced cloud technologists.</p>
+              <a href="#" class="btn btn">Go somewhere</a>
+            </div>
+          </div>
+    </div>
+    </div>
+    <br>
+    <br>
+       
+
+       <footer class="footer-distributed">
+       
+             <div class="footer-left">
+             <img class="logo" src="./logo.png" alt="...">
+             </div>
+       
+             <div class="footer-center">
+       
+               <div>
+                 <i class="fa fa-map-marker"></i>
+              <h1>   AWS TRAINING</h1>
+               </div>
+                <div>
+                    <i class="fa fa-phone"></i>
+                    <p class="end-footer">OVERVIEW</p>
+                  </div>
+          
+                  <div>
+                    <i class="fa fa-envelope"></i>
+                    <p>AWS Solution Architect - Associate</p>
+                  </div>
+                  <div>
+                   <i class="fa fa-envelope"></i>
+                   <p>AWS Solution Architect - Professional</p>
+                 </div>
+                </div>
+       
+             <div class="footer-right">
+       
+                <p class="add"><i>92 Padma Vikas Complex, Padmavathy Main Road, Madambakkam, Chennai 600126</i> </p>
+       
+                <div class="footer-icons">
+                    <ul>
+                        <li>
+                            <a href="#"> <img src="./in.jpeg" width="40" height="40" class="d-inline-block align-top" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"> <img src="./link.jpeg" width="40" height="40" class="d-inline-block align-top" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"> <img src="./li.jpeg" width="40" height="40" class="d-inline-block align-top" alt=""></a>
+                        </li>
+                    </ul>
+                </div>
+       
+             </div>
+       
+           </footer>
+    
+      
+</body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $(window).scroll(function() {
+      if ($(this).scrollTop() > 10) {
+        $('.navbar').addClass('navbar-scrolled');
+        $('.menus').addClass('ss');
+
+      } else {
+        $('.navbar').removeClass('navbar-scrolled');
+        $('.menus').removeClass('ss');
+
+      }
+    });
+  });
+</script>
+<script>
+    AOS.init();
+  </script>
+   <script src="home.js"></script>
+   <script>
+    let nextBtn = document.querySelector('.next')
+let prevBtn = document.querySelector('.prev')
+
+let slider = document.querySelector('.slider')
+let sliderList = slider.querySelector('.slider .list')
+let thumbnail = document.querySelector('.slider .thumbnail')
+let thumbnailItems = thumbnail.querySelectorAll('.item')
+
+thumbnail.appendChild(thumbnailItems[0])
+
+// Function for next button 
+nextBtn.onclick = function() {
+    moveSlider('next')
+}
+
+
+// Function for prev button 
+prevBtn.onclick = function() {
+    moveSlider('prev')
+}
+
+
+function moveSlider(direction) {
+    let sliderItems = sliderList.querySelectorAll('.item')
+    let thumbnailItems = document.querySelectorAll('.thumbnail .item')
+
+    if(direction === 'next'){
+        sliderList.appendChild(sliderItems[0])
+        thumbnail.appendChild(thumbnailItems[0])
+        slider.classList.add('next')
+    } else {
+        sliderList.prepend(sliderItems[sliderItems.length - 1])
+        thumbnail.prepend(thumbnailItems[thumbnailItems.length - 1])
+        slider.classList.add('prev')
+    }
+
+
+    slider.addEventListener('animationend', function() {
+        if(direction === 'next'){
+            slider.classList.remove('next')
+        } else {
+            slider.classList.remove('prev')
+        }
+    }, {once: true}) // Remove the event listener after it's triggered once
+}
+   </script>
+</html>
